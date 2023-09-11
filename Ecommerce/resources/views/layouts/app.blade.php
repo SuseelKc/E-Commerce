@@ -18,8 +18,7 @@
      <link href="{{ asset('/assets/css/bootstrap.min.css') }}" rel="stylesheet">
 
      @livewireStyles
-    <!-- Scripts -->
-    {{-- @vite(['resources/sass/app.scss', 'resources/js/app.js']) --}}
+    
 </head>
 <body>
     <div id="app">
