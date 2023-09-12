@@ -124,17 +124,30 @@
         <li class="nav-item nav-profile dropdown">
           <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="profileDropdown">
             <img src="images/faces/face5.jpg" alt="profile"/>
-            <span class="nav-profile-name">Louis Barnett</span>
+            <span class="nav-profile-name">{{auth()->user()->name}}</span>
           </a>
           <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
             <a class="dropdown-item">
               <i class="mdi mdi-settings text-primary"></i>
               Settings
             </a>
-            <a class="dropdown-item">
-              <i class="mdi mdi-logout text-primary"></i>
-              Logout
-            </a>
+
+            {{-- <form action="{{ route('logout') }}" method="POST" class="dropdown-item">
+              @csrf <!-- Include a CSRF token for security -->
+              <button type="submit" style="background: none; border: none;">
+                  <i class="mdi mdi-logout text-primary"></i> Logout
+              </button>
+          </form> --}}
+
+          <a class="dropdown-item" href="{{ route('logout') }}"
+            onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();">
+              <i class="mdi mdi-logout text-primary"></i>{{ __('Logout') }}
+          </a>
+          <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+            @csrf
+          </form>
+
           </div>
         </li>
       </ul>
