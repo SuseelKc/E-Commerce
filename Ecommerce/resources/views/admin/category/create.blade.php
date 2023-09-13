@@ -18,23 +18,30 @@
 
                         <div class="col-md-6 mb-3">
                              <label>Name</label>
-                            <input type="text" name="name" class="form-control"/>    
+                            <input type="text" name="name" class="form-control"/>
+                            @error('name') <small class="text-danger">{{$message}}</small>
+                            @enderror    
                         </div>
                         <div class="col-md-6 mb-3">
                             <label>Slug</label>
-                           <input type="text" name="slug" class="form-control"/>    
+                           <input type="text" name="slug" class="form-control"/>
+                           @error('slug') <small class="text-danger">{{$message}}</small>
+                            @enderror      
                        </div>
                        <div class="col-md-6 mb-3">
                             <label>Description</label>
-                            <textarea type="description" name="description" class="form-control" rows="3"></textarea>  
+                            <textarea type="description" name="description" class="form-control" rows="3"></textarea>
+                            @error('description') <small class="text-danger">{{$message}}</small>
+                            @enderror   
                         </div>
                         <div class="col-md-6 mb-3">
                             <label>Image</label>
-                           <input type="file" name="image" class="form-control"/>    
+                           <input type="file" name="image" class="form-control"/>
+                               
                        </div>
                        <div class="col-md-6 mb-3">
                         <label>Status</label><br/>
-                       <input type="checkbox" name="status" class="form-control"/>    
+                       <input type="checkbox" name="status" />    
                         </div>
                         <br>
                         <div>
@@ -43,16 +50,24 @@
                         <br> <br>
                         <div class="col-md-12 mb-3">
                             <label>Meta Title</label>
-                           <input type="text" name="meta_title" class="form-control"/>    
+                           <input type="text" name="meta_title" class="form-control"/>
+                           @error('meta_title') <small class="text-danger">{{$message}}</small>
+                            @enderror
+                               
                        </div>
                        <div class="col-md-12 mb-3">
                         <label>Meta Keyword</label>
                        {{-- <input type="file" name="name" class="form-control"/>     --}}
-                        <textarea name="meta_keyword" class="form-control" rows="3"></textarea>    
+                        <textarea name="meta_keyword" class="form-control" rows="3"></textarea> 
+                        @error('meta_keyword') <small class="text-danger">{{$message}}</small>
+                        @enderror
+                              
                         </div>
                         <div class="col-md-12 mb-3">
                             <label>Meta Description</label>
-                           <textarea name="meta_description" class="form-control" rows="3"></textarea>    
+                           <textarea name="meta_description" class="form-control" rows="3"></textarea>
+                           @error('meta_description') <small class="text-danger">{{$message}}</small>
+                        @enderror    
                        </div>
 
                        <div class="col-md-12 mb-3">
