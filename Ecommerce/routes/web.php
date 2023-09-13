@@ -24,6 +24,8 @@ Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
+
+
 Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function (){
     Route:: get ('dashboard',[DashboardController::class, 'index']);
     // category
@@ -32,5 +34,8 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function (){
     Route::post('category',[CategoryController::class,'store'])->name('category.store');
     
     Route::get('category/{category}/edit',[CategoryController::class,'edit'])->name('category.edit');
+    
+    Route::post('category/{id}/update',[CategoryController::class,'update'])->name('category.update');
+
 
 });
