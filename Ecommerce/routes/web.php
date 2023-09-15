@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DashboardController;
 
@@ -40,5 +41,10 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function (){
     // brands
     // connecting to brand index controller made by livewire
     Route::get('/brands',App\Livewire\Admin\Brands\Index::class);
+
+    // product route on group
+    Route::controller(ProductController::class)->group(function(){
+        Route::get('/products','index');
+    });
 
 });
