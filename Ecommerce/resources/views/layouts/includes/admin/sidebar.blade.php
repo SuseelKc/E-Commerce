@@ -33,7 +33,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="pages/charts/chartjs.html">
+        <a class="nav-link" href="/admin/brands">
           <i class="mdi mdi-format-list-bulleted menu-icon"></i>
           <span class="menu-title">Brands</span>
         </a>

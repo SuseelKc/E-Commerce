@@ -37,5 +37,8 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function (){
     
     Route::post('category/{id}/update',[CategoryController::class,'update'])->name('category.update');
 
+    // brands
+    // connecting to brand index controller made by livewire
+    Route::get('/brands',App\Livewire\Admin\Brands\Index::class);
 
 });

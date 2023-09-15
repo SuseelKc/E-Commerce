@@ -75,3 +75,10 @@
             </div> 
 
 </div> 
+@push('script')
+<script>
+   window.addEventListner('close-modal',event=>{
+    $('#deleteModal').hide();
+   });
+</script>   
+@endpush
