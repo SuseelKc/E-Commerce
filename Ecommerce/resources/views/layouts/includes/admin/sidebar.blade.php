@@ -22,15 +22,22 @@
         <div class="collapse" id="ui-basic">
           <ul class="nav flex-column sub-menu">
             <li class="nav-item"> <a class="nav-link" href="{{url('/admin/category')}}">Add Category</a></li>
-            <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Typography</a></li>
+            <li class="nav-item"> <a class="nav-link" href="#">View Category</a></li>
           </ul>
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="pages/forms/basic_elements.html">
+        <a class="nav-link" data-bs-toggle="collapse" href="#products" aria-expanded="false" aria-controls="ui-basic">
           <i class="mdi mdi-square-inc-cash menu-icon"></i>
           <span class="menu-title">Products</span>
+          <i class="menu-arrow"></i> 
         </a>
+        <div class="collapse" id="products">
+          <ul class="nav flex-column sub-menu">  
+            <li class="nav-item"><a class="nav-link" href="{{url('admin/product/create')}}">Add Products </a></li>
+            <li class="nav-item"><a class="nav-link" href="{{url('admin/products')}}">View Products</a></li>
+          </ul>
+        </div>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/admin/brands">
