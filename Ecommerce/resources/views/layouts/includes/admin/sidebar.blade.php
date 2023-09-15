@@ -34,8 +34,8 @@
         </a>
         <div class="collapse" id="products">
           <ul class="nav flex-column sub-menu">  
-            <li class="nav-item"><a class="nav-link" href="{{url('admin/product/create')}}">Add Products </a></li>
             <li class="nav-item"><a class="nav-link" href="{{url('admin/products')}}">View Products</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{url('admin/products/create')}}">Add Products </a></li>   
           </ul>
         </div>
       </li>
