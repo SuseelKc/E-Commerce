@@ -13,6 +13,14 @@
         </div>
         <div class="card-body">
 
+            @if($errors->any())
+            <div class="alert alert-warning">
+                @foreach($errors->all() as $error)
+                    <div> {{$error}}</div>
+                @endforeach
+            </div>
+            @endif    
+
             <form action="{{url('admin/products')}}" method="post" enctype="multipart/form-data">
 
                 @csrf
@@ -43,9 +51,9 @@
                                 </li>
                             
                             </ul>
-                            <br>
+                           
                                 <div class="tab-content" id="myTabContent">
-                                    <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+                                    <div class="tab-pane  border p-3 fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
                                         <div class="mb-3">
                                             <label>
                                                 Category
@@ -79,18 +87,18 @@
                                         </div>
                                         <div class="mb-3">
                                             <label>Small Description(500 words)</label>
-                                            <textarea name="small_description" class="form=control" rows="4"></textarea>
+                                            <textarea name="small_description" class="form-control" rows="4"></textarea>
                                         </div>
                                         <div class="mb-3">
-                                            <label>Description(500 words)</label>
-                                            <textarea name="description" class="form=control" rows="4"></textarea>
+                                            <label>Description</label>
+                                            <textarea name="description" class="form-control" rows="4"></textarea>
                                         </div>      
 
                                     </div>
-                                    <div class="tab-pane fade" id="seotag-tab-pane" role="tabpanel" aria-labelledby="seotag-tab" tabindex="0">
+                                    <div class="tab-pane border p-3 fade" id="seotag-tab-pane" role="tabpanel" aria-labelledby="seotag-tab" tabindex="0">
                                         <div class="mb-3">
                                             <label>Meta Title</label>
-                                            <input type="text" name="slug" class="form-control"/>
+                                            <input type="text" name="meta_title" class="form-control"/>
                                         </div>
                                         <div class="mb-3">
                                             <label>Meta Description</label>
@@ -102,7 +110,7 @@
                                         </div>
 
                                     </div>
-                                    <div class="tab-pane fade" id="details-tab-pane" role="tabpanel" aria-labelledby="details-tab" tabindex="0">
+                                    <div class="tab-pane border p-3 fade" id="details-tab-pane" role="tabpanel" aria-labelledby="details-tab" tabindex="0">
                                         <div class="row">
                                             <div class="col-md-4">
                                                 <div class="mb-3">
@@ -113,8 +121,8 @@
                                             {{-- selling price --}}
                                             <div class="col-md-4">
                                                 <div class="mb-3">
-                                                    <label>Original Price</label>
-                                                    <input type="text" name="original_price"  class="form-control"/>
+                                                    <label>Selling Price</label>
+                                                    <input type="text" name="selling_price"  class="form-control"/>
                                                 </div>   
                                             </div>
                                             {{--  quantity--}}
@@ -145,10 +153,10 @@
                                     
                                     </div>
 
-                                    <div class="tab-pane fade" id="image-tab-pane" role="tabpanel" aria-labelledby="image-tab" tabindex="0">
+                                    <div class="tab-pane border p-3 fade" id="image-tab-pane" role="tabpanel" aria-labelledby="image-tab" tabindex="0">
                                         <div class="mb-3">
                                             <label>Upload Product Images</label>
-                                            <input type="file"  name="image" multiple class="form-control"/>
+                                            <input type="file"  name="image[]" multiple class="form-control"/>
                                         </div>
                                         
                                     </div> 
