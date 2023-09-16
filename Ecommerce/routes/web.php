@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Admin\ColorController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DashboardController;
@@ -56,6 +57,12 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function (){
         
         Route::get('/products/{id}/delete','destroyProduct');
 
+    });
+
+    Route::controller(ColorController::class)->group(function(){
+        Route::get('/color', 'index');
+        Route::get('/color/create','create');
+        Route::post('/color/create','store');
     });
 
 });
