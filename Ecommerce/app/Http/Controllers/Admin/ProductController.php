@@ -53,12 +53,12 @@ class ProductController extends Controller
             foreach($request->file('image')as $imageFile){
                 $extension = $imageFile->getClientOriginalExtension();
                 $filename= time().$i++.'.'.$extension;  //to create unique file image name
-                $imageFile->move($uploadsPath,$filename);
+                $imageFile->move($uploadPath,$filename);
                 $fileImagePathName=$uploadPath.$filename;
 
                 $product->productImages()->create([
                     'product_id'=>$product->id,
-                    'image'=>$finalImagePathName,
+                    'image'=>$fileImagePathName,
         
                 ]);
 
