@@ -47,6 +47,15 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function (){
         Route::get('/products','index');
         Route::get('/products/create','create');
         Route::post('/products' ,'store');
+
+        Route::get('/products/{id}/edit','edit');
+
+        Route::post('/products/{id}/update','update');
+
+        Route::get('/productimage/{id}/delete','destroyImage');
+        
+        Route::get('/products/{id}/delete','destroyProduct');
+
     });
 
 });
