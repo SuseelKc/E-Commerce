@@ -83,6 +83,12 @@ class ProductFormRequest extends FormRequest
                 'nullable',
                 'image|mimes:jpeg,png,jpg'
             ],
+            'color[]'=>[
+                'nullable'
+            ],
+            'colorquantity[]'=>[
+                'nullable'
+            ]
         ];
     }
 }
