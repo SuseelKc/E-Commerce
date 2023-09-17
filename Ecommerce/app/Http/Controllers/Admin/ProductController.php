@@ -93,7 +93,11 @@ class ProductController extends Controller
         $product = Product::findOrFail($id);
         $categories=Category::all();
         $brands=Brands::all();
-        return view('admin.products.edit',compact('product','categories','brands'));
+
+        $productColor=$product->productColors->pluck('color_id')->toArray();
+        $color=Color::whereNotIn('id',$productColor)->get();
+
+        return view('admin.products.edit',compact('product','categories','brands','color'));
     }
 
     public function update(int $id,ProductFormRequest $request){
@@ -198,4 +202,18 @@ class ProductController extends Controller
     
     }
     
+    // function of ajax
+    public function updateProdColorQty(Request $request,$prod_color_id){
+
+        // dd("here");
+
+      $productColorData  = Product::findOrFail($request->product_id)->productColors()->where('id',$prod_color_id)->first();
+
+      $productColorData->update([
+        'quantity'=>$request->qty
+      ]);
+      return response()->json(['message'=>'Product Color Qty Updated!']);
+      
+    }
+
 }

@@ -114,8 +114,9 @@
                                             <label>Meta Keyword</label>
                                             <input type="text" name="meta_keyword" class="form-control" row="4"/>
                                         </div>
+                                    </div>    
 
-                                    </div>
+                            
                                     <div class="tab-pane border p-3 fade" id="details-tab-pane" role="tabpanel" aria-labelledby="details-tab" tabindex="0">
                                         <div class="row">
                                             <div class="col-md-4">
@@ -202,17 +203,15 @@
                                             Submit
                                         </button>   
                                     </div>
-                                        
-                        </form>      
+                                </div>    
+            </form>                     
+            </div>        
+                     
+        
 
-
-                        </div>   
-                    </div>
-                    {{-- <div class="tab-pane fade" id="disabled-tab-pane" role="tabpanel" aria-labelledby="disabled-tab" tabindex="0">...</div> --}}
-                </div>
         </div>   
         </div>
-    </div>
-</div>            
-
+                    {{-- <div class="tab-pane fade" id="disabled-tab-pane" role="tabpanel" aria-labelledby="disabled-tab" tabindex="0">...</div> --}}
+</div>
+  
 @endsection

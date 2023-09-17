@@ -3,6 +3,7 @@
 namespace App\Models;
 
 
+use App\Models\Color;
 use App\Models\Category;
 use App\Models\ProductColor;
 use App\Models\ProductImage;
@@ -43,4 +44,6 @@ class Product extends Model
         return $this->hasmany(ProductColor::class,'product_id','id');
 
     }
+
+   
 }

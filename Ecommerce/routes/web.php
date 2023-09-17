@@ -57,6 +57,9 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function (){
         
         Route::get('/products/{id}/delete','destroyProduct');
 
+        // AJAX
+        Route::post('/product-color/{prod_color_id}','updateProdColorQty');
+
     });
 
     Route::controller(ColorController::class)->group(function(){
