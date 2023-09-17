@@ -7,6 +7,7 @@ use App\Models\Brands;
 use App\Models\Product;
 use App\Models\Category;
 use Illuminate\Support\Str;
+use App\Models\ProductColor;
 use App\Models\ProductImage;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -216,4 +217,10 @@ class ProductController extends Controller
       
     }
 
+    public function delProdColorQty($prod_color_id){
+
+        $prodColor= ProductColor::findOrFail($prod_color_id);
+        $prodColor->delete();
+        return response()->json(['message'=>'Product Color/Qty Deleted!']);
+    }
 }

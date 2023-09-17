@@ -246,7 +246,7 @@
                                                                 </div>
                                                         </td>
                                                         <td>
-                                                            <button type="button" value="{{$prodColor->id}}" class="btn btn-danger btn-sm text-white">Delete</button>
+                                                            <button type="button" value="{{$prodColor->id}}" class="deleteProductColorBtn btn btn-danger btn-sm text-white">Delete</button>
                                                         </td>
                                                     </tr>
                                                 @endforeach    
@@ -311,12 +311,32 @@
             data: data,
             // dataType :"dataType",
             success: function (response){
-                alert(response.message)
+                alert(response.message);
             }
         });
 
         
 
+        });
+
+        $(document).on('click','.deleteProductColorBtn',function(){ 
+        
+            var prod_color_id=$(this).val();
+            var thisClick = $(this);
+
+          
+
+         $.ajax({
+
+            type:"GET",
+            url: "/admin/product-color/"+prod_color_id+"/delete",
+            success: function (response){
+                thisClick.closest('.prod-color-tr').remove();
+                alert(response.message);
+            }
+            
+         });
+        
         });
 
     });
