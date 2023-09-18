@@ -41,8 +41,9 @@
                             href="{{url('admin/color/'.$color->id.'/delete')}}" onclick="return confirm('Are you sure to delete?')"
                                 class="btn btn-danger btn-sm">Delete</a>
                         </td>
-                        @endforeach 
                         </tr>
+                        @endforeach 
+                        
                     </tbody>
 
                 </table>

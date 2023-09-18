@@ -147,6 +147,21 @@ class ProductController extends Controller
 
                 }
             }
+
+            if ($request->has('color') && $request->has('colorquantity')){
+            
+                foreach($request->input('color') as $key => $color){
+                    $product->productColors()->create([
+                        'product_id'=>$product->id,
+                        'color_id'=>$color,
+                        'quantity'=>$request->colorquantity[$key] ?? 0
+    
+                    ]);
+                }
+            }
+    
+
+
             return redirect('/admin/products')->with('message','Product Upated Sucessfully!');
 
 

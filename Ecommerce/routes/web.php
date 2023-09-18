@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\ColorController;
+use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DashboardController;
@@ -72,4 +73,12 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function (){
         Route::get('/color/{id}/delete','delete');
     });
 
+
+    // product route on group
+    Route::controller(SliderController::class)->group(function(){
+        Route::get('/sliders','index');
+        Route::get('/sliders/create','create');
+        Route::post('/sliders/store','store');
+    });
+ 
 });
