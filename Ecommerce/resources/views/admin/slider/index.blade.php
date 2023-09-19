@@ -30,16 +30,17 @@
                     <tbody>
                        @foreach($sliders as $slider)
                         <tr>
+                            <td>{{$slider->id}}</td>
                             <td>{{$slider->title}}</td>
                             <td>{{$slider->description}}</td>
                             <td>
-                                <img src="{{asset("$slider->image")}}" style="width:70px; height:70px"
+                                <img src="{{asset("$slider->image")}}" style="width:100px; height:100px"
                                 alt="Slider">
                             </td>
-                            <td>{{$slider->status}}</td>
+                            <td>{{$slider->status == '0'? 'Visible':'Hidden'}}</td>
                             <td>
-                                <a href="" class="btn btn-success">Edit</a>
-                                <a href="" class="btn btn-danger">Danger</a>
+                                <a href="{{url('admin/sliders/'.$slider->id.'/edit')}}" class="btn  btn-sm btn-success">Edit</a>
+                                <a href="{{url('admin/sliders/'.$slider->id.'/delete')}}" class="btn btn-sm btn-danger">Danger</a>
                             </td>
                         </tr>
                         @endforeach
