@@ -72,7 +72,9 @@ class SliderController extends Controller
             if ($request->hasFile('image')){
 
                 // check for path
-                $path='uploads/slider/'.$slider->image;
+                // $path='uploads/slider/'.$slider->image;
+                $path=$slider->image;
+                // dd($path);
 
                 if(File::exists($path)){
                     File::delete($path);
@@ -98,8 +100,9 @@ class SliderController extends Controller
         $slider=Slider::findOrFail($id);
 
             // check for path
-            $path='uploads/slider/'.$slider->image;
-
+            // $path='uploads/slider/'.$slider->image;
+        $path=$slider->image;
+            // dd($path);
             if(File::exists($path)){
                 File::delete($path);
             }

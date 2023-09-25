@@ -40,7 +40,7 @@
                             <td>{{$slider->status == '0'? 'Visible':'Hidden'}}</td>
                             <td>
                                 <a href="{{url('admin/sliders/'.$slider->id.'/edit')}}" class="btn  btn-sm btn-success">Edit</a>
-                                <a href="{{url('admin/sliders/'.$slider->id.'/delete')}}" class="btn btn-sm btn-danger">Danger</a>
+                                <a href="{{url('admin/sliders/'.$slider->id.'/delete')}}" class="btn btn-sm btn-danger">Delete</a>
                             </td>
                         </tr>
                         @endforeach
