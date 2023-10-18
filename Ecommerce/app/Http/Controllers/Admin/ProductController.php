@@ -70,7 +70,7 @@ class ProductController extends Controller
                 ]);
 
             }
-        }
+        }   
         
         if ($request->has('color') && $request->has('colorquantity')){
             
